@@ -1,1 +1,12 @@
 <h1>Posts</h1>
+
+<table>
+    <th></th>
+</table>
+
+{{#each posts}}
+    <h1>{{titulo}}</h1>
+    <p>{{conteudo}}</p>
+    <a href="deletar/{{id}}"><buttom>Deletar</buttom></a>
+    <hr>
+{{/each}}

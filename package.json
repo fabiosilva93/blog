@@ -5,5 +5,14 @@
     "express-handlebars": "^7.1.2",
     "mysql2": "^3.6.2",
     "sequelize": "^6.33.0"
-  }
+  },
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

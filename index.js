@@ -7,7 +7,13 @@ const app = express();
 
 //Config
     //Template Engine
-    app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+    app.engine('handlebars', handlebars.engine({defaultLayout: 'main',
+        //Esse runtimeOptions é para ajudar o handlebars a trabalhar com o BD
+        runtimeOptions:{
+            allowProtoPropertiesByDefault: true,
+            allowProtoMethodsByDefault: true,
+        },
+    }));
     app.set('view engine', 'handlebars');
     app.set('views', './views');
 
@@ -17,7 +23,10 @@ const app = express();
 
 //Rotas
     app.get('/', function (req, res) {
-        res.render('home');//Não precisa informar o diretório views. Aqui já está buscando na pasta views e o arquivo home.handlebars
+        //res.render('home');//Não precisa informar o diretório views. Aqui já está buscando na pasta views e o arquivo home.handlebars
+        Post.findAll().then(function(posts){
+            res.render('home', {posts: posts});
+        })
     });
 
     app.get('/cadpost', function (req, res){
@@ -35,6 +44,15 @@ const app = express();
             res.send('Houve um erro: ' + erro);
         });
     });
+    /*
+    app.get('deletar/:id', function(req, res){
+        Post.destroy({where: {'id': req.params.id}}).then(function(){
+            res.send("Postagem deletada com sucesso!");
+        }).catch(function(erro){
+            res.send("Esta postagem não existe!");
+        });
+    });
+    */
 
 const portaServ = 3000;
 app.listen(portaServ, function(){
