@@ -1,5 +1,5 @@
-const express = require("express");
-const handlebars = require("express-handlebars");
+const express = require('express');
+const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Post = require('./models/Post');
 
@@ -20,6 +20,9 @@ const app = express();
     //BodyParser
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
+
+    //Arquivos estáticos (CSS, Imagens, JS)
+    app.use(express.static('public'));
 
 //Rotas
     app.get('/', function (req, res) {
@@ -44,15 +47,15 @@ const app = express();
             res.send('Houve um erro: ' + erro);
         });
     });
-    /*
+    
     app.get('deletar/:id', function(req, res){
         Post.destroy({where: {'id': req.params.id}}).then(function(){
             res.send("Postagem deletada com sucesso!");
         }).catch(function(erro){
-            res.send("Esta postagem não existe!");
+            res.send("Esta postagem não existe!"+erro);
         });
     });
-    */
+    
 
 const portaServ = 3000;
 app.listen(portaServ, function(){

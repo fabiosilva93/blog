@@ -1,0 +1,37 @@
+body{
+    background-color: #eceff1;
+}
+
+h1{
+    color: blue;
+}
+
+.conteudo {
+    margin: 0 auto;
+    width: 1120px;
+}
+
+.main{
+    text-align: left;
+    width: 720px;
+    padding: 25px;
+    float: left;
+    background-color: #ffffff;
+}
+
+.aside{
+    float: right;
+    width: 320px;
+}
+
+.aside-pesquisar{
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.aside-posts-recentes {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px
+}
