@@ -1,5 +1,5 @@
-<div class="conteudo">
-    <div class="main">
+<div class="conteudo w100">
+    <div class="main w50 left">
         <div class="post-list">
             {{#each posts}}
                 <h1>{{titulo}}</h1>
@@ -9,14 +9,16 @@
             {{/each}}
         </div>
     </div>
-    <div class="aside">
-        <div class="aside-pesquisar">
+    <div class="clear"></div>
+    <div class="aside w30 left">
+        <div class="aside-box">
             <form>
                 <input type="text">
                 <button>pesquisar</button>
             </form>
         </div>
-        <div class="aside-posts-recentes">
+        <div class="clear"></div>
+        <div class="aside-box">
             <ul>
                 <li>Post 1</li>
                 <li>Post 2</li>
@@ -24,6 +26,7 @@
                 <li>Post 4</li>
             </ul>
         </div>
+        <div class="clear"></div>
         <div id="categorias">
 
         </div>
